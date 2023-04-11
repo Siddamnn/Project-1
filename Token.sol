@@ -16,12 +16,10 @@ contract MyToken {
     }
 
     // burn function
-    function burn(address _addr, uint _value) public returns (string memory) {
+    function burn(address _addr, uint _value) public {
         if (balances[_addr] >= _value) {
             supply -= _value;
             balances[_addr] -= _value;
-            return "Burn Successful!";
         }
-        return "Insufficient tokens!!!";
     }
 }
